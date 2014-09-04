@@ -216,7 +216,7 @@ class Whitewashing_Db_Adapter_Mysql extends Zend_Db_Adapter_Abstract
         }
 
         $this->_connection = @mysql_connect(
-            $this->_config['host'],
+            $this->_config['host'] . (isset($this->_config['port']) ? ':' . $this->_config['port'] : ''),
             $this->_config['username'],
             $this->_config['password']
         );
